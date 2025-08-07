@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Alumni Connect</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-section {
+      padding: 100px 20px 60px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .hero-section p {
+      font-size: 1.25rem;
+      color: #e0e0e0;
+    }
+
+    .btn-section {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-choice {
+      width: 200px;
+      padding: 14px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: white;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-choice:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+    }
+
+    footer {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-align: center;
+      padding: 20px 0;
+      margin-top: auto;
+      font-size: 14px;
+      color: #f0f0f0;
+      backdrop-filter: blur(10px);
+    }
+
+    footer a {
+      color: #fbd38d;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .hero-section h1 {
+        font-size: 2.2rem;
+      }
+
+      .btn-choice {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1><i class="fas fa-users"></i> Smart Alumni Connect</h1>
+      <p>Bridge the gap between students and alumni for mentorship, guidance, and career growth.</p>
+
+      <div class="btn-section">
+        <a href="student_options.html" class="btn-choice">Student</a>
+        <a href="alumni_options.html" class="btn-choice">Alumni</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Smart Alumni Connect</p>
+    <p>
+      <a href="#">About</a> |
+      <a href="#">Privacy Policy</a> |
+      <a href="mailto:support@college.edu">Contact Us</a>
+    </p>
+  </footer>
+
+</body>
+</html>
