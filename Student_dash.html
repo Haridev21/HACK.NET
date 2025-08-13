@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Alumni Network</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-graduation-cap"></i> Student Dashboard</h1>
+                <div class="user-info">
+                    <span class="user-name">John Doe</span>
+                    <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-tab="search">
+                <i class="fas fa-search"></i> Search Alumni
+            </button>
+            <button class="tab-btn" data-tab="requests">
+                <i class="fas fa-list"></i> My Requests
+            </button>
+        </nav>
+
+        <!-- Search Alumni Section -->
+        <section id="search" class="tab-content active">
+            <div class="search-container">
+                <h2><i class="fas fa-search"></i> Search Alumni</h2>
+                
+                <!-- Search Filters -->
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="domain-filter">Domain:</label>
+                        <select id="domain-filter">
+                            <option value="">All Domains</option>
+                            <option value="software">Software Engineering</option>
+                            <option value="data">Data Science</option>
+                            <option value="product">Product Management</option>
+                            <option value="design">UX/UI Design</option>
+                            <option value="marketing">Digital Marketing</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="company-filter">Company:</label>
+                        <select id="company-filter">
+                            <option value="">All Companies</option>
+                            <option value="google">Google</option>
+                            <option value="microsoft">Microsoft</option>
+                            <option value="amazon">Amazon</option>
+                            <option value="apple">Apple</option>
+                            <option value="meta">Meta</option>
+                            <option value="netflix">Netflix</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="batch-filter">Batch:</label>
+                        <select id="batch-filter">
+                            <option value="">All Batches</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                        </select>
+                    </div>
+                    
+                    <button id="search-btn" class="search-btn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+
+                <!-- Search Results -->
+                <div class="search-results">
+                    <div class="results-header">
+                        <h3>Search Results</h3>
+                        <span class="results-count">0 alumni found</span>
+                    </div>
+                    
+                    <div id="alumni-list" class="alumni-grid">
+                        <!-- Alumni cards will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Requests Section -->
+        <section id="requests" class="tab-content">
+            <div class="requests-container">
+                <h2><i class="fas fa-list"></i> My Requests</h2>
+                
+                <div class="requests-tabs">
+                    <button class="request-tab-btn active" data-request-type="all">All Requests</button>
+                    <button class="request-tab-btn" data-request-type="pending">Pending</button>
+                    <button class="request-tab-btn" data-request-type="accepted">Accepted</button>
+                    <button class="request-tab-btn" data-request-type="rejected">Rejected</button>
+                </div>
+
+                <div id="requests-list" class="requests-list">
+                    <!-- Request items will be populated here -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Request Modal -->
+    <div id="request-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Send Request</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="alumni-info">
+                    <img id="modal-alumni-avatar" src="" alt="Alumni Avatar">
+                    <div>
+                        <h4 id="modal-alumni-name"></h4>
+                        <p id="modal-alumni-role"></p>
+                        <p id="modal-alumni-company"></p>
+                    </div>
+                </div>
+                
+                <form id="request-form">
+                    <div class="form-group">
+                        <label for="request-type">Request Type:</label>
+                        <select id="request-type" required>
+                            <option value="">Select request type</option>
+                            <option value="mentorship">Mentorship</option>
+                            <option value="mock-interview">Mock Interview</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="request-message">Message:</label>
+                        <textarea id="request-message" rows="4" placeholder="Describe what you're looking for..." required></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="cancel-request">Cancel</button>
+                        <button type="submit" class="btn-primary">Send Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success/Error Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

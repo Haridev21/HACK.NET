@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Signup - Alumni Network</title>
+    <link rel="stylesheet" href="/css/login-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="Homepage.html">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Alumni Network</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="Homepage.html">Home</a>
+                <a href="Homepage.html#features">Features</a>
+                <a href="Homepage.html#about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Signup Container -->
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>Create Student Account</h1>
+                <p>Join the alumni network as a student</p>
+            </div>
+
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-fullname">
+                        <i class="fas fa-user"></i> Full Name
+                    </label>
+                    <input type="text" id="signup-fullname" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-email">
+                        <i class="fas fa-envelope"></i> Email ID
+                    </label>
+                    <input type="email" id="signup-email" required placeholder="Enter your email address">
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-graduation">
+                        <i class="fas fa-calendar"></i> Year of Graduation
+                    </label>
+                    <select id="signup-graduation" required>
+                        <option value="">Select graduation year</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-department">
+                        <i class="fas fa-graduation-cap"></i> Department
+                    </label>
+                    <select id="signup-department" required>
+                        <option value="">Select your department</option>
+                        <option value="computer-science">Computer Science</option>
+                        <option value="information-technology">Information Technology</option>
+                        <option value="data-science">Data Science</option>
+                        <option value="artificial-intelligence">Artificial Intelligence</option>
+                        <option value="cybersecurity">Cybersecurity</option>
+                        <option value="software-engineering">Software Engineering</option>
+                        <option value="mechanical">Mechanical Engineering</option>
+                        <option value="electrical">Electrical Engineering</option>
+                        <option value="civil">Civil Engineering</option>
+                        <option value="chemical">Chemical Engineering</option>
+                        <option value="biotechnology">Biotechnology</option>
+                        <option value="business">Business Administration</option>
+                        <option value="economics">Economics</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-position">
+                        <i class="fas fa-briefcase"></i> Current Position
+                    </label>
+                    <input type="text" id="signup-position" required placeholder="e.g., Student, Intern, Junior Developer">
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-password">
+                        <i class="fas fa-lock"></i> Create Password
+                    </label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signup-password" required placeholder="Create a strong password">
+                        <button type="button" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signup-confirm-password">
+                        <i class="fas fa-lock"></i> Confirm Password
+                    </label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signup-confirm-password" required placeholder="Confirm your password">
+                        <button type="button" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+            </form>
+            
+            <div class="signup-link">
+                <p>Already have an account? <a href="loginpage.html">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast" class="toast"></div>
+
+    <script src="/js/signup-script.js"></script>
+</body>
+</html> 

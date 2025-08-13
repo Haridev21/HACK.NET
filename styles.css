@@ -585,13 +585,17 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    padding: 15px 20px;
-    border-radius: 8px;
+    padding: 18px 25px;
+    border-radius: 12px;
     color: white;
     font-weight: 600;
+    font-size: 16px;
     z-index: 1001;
     transform: translateX(400px);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    line-height: 1.4;
 }
 
 .toast.show {
@@ -599,11 +603,13 @@ body {
 }
 
 .toast.success {
-    background: #10b981;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-left: 4px solid #047857;
 }
 
 .toast.error {
-    background: #ef4444;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border-left: 4px solid #b91c1c;
 }
 
 /* Responsive Design */
@@ -679,4 +685,4 @@ body {
 
 .empty-state p {
     font-size: 16px;
-}
+} 
