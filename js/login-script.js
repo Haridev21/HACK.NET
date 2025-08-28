@@ -1,3 +1,5 @@
+
+
 console.log('Login script loaded');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -153,11 +155,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ----- Mock Google/LinkedIn login -----
-    const googleBtn = document.querySelector('.google-btn');
-    if (googleBtn) googleBtn.addEventListener('click', () => {
-        showToast('Google login mock', 'success');
+const googleBtn = document.querySelector('.google-btn');
+
+function handleCredentialResponse(response) {
+    // This JWT contains user info
+    const data = JSON.parse(atob(response.credential.split('.')[1]));
+    const googleUser = {
+        fullName: data.name,
+        email: data.email,
+        picture: data.picture,
+        userType: 'student',
+        createdAt: new Date().toISOString(),
+        lastLogin: new Date().toISOString()
+    };
+
+    // Save user to localStorage (mock database)
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    if (!users.some(u => u.email === googleUser.email)) {
+        users.push(googleUser);
+        localStorage.setItem('users', JSON.stringify(users));
+    }
+    localStorage.setItem('currentUser', JSON.stringify(googleUser));
+
+    showToast(`Welcome, ${googleUser.fullName}`, 'success');
+    setTimeout(() => { window.location.href = 'Student_dash.html'; }, 1000);
+}
+
+if (googleBtn) {
+    googleBtn.addEventListener('click', () => {
+        google.accounts.id.initialize({
+            client_id: '1044900211717-j6ct5aas6u816d05rrr11mhtfu3binvp.apps.googleusercontent.com', // ← Replace with your Google OAuth Client ID   
+            callback: handleCredentialResponse
+        });
+        google.accounts.id.prompt(); // Show Google Sign-In popup
     });
+}
+
 
     if (linkedinLoginBtn) {
         linkedinLoginBtn.addEventListener('click', () => {
